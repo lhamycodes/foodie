@@ -38,3 +38,8 @@ const TextStyle captionStyle = TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w400,
 );
+
+const EdgeInsets scaffoldPadding = EdgeInsets.symmetric(
+  horizontal: 20,
+  vertical: 20,
+);

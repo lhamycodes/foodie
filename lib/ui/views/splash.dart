@@ -1,5 +1,10 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: import_of_legacy_library_into_null_safe
 
+import 'package:flutter/material.dart';
+import 'package:provider_architecture/provider_architecture.dart';
+
+import '../../locator.dart';
+import '../../viewmodels/application_view_model.dart';
 import '../shared/app_colors.dart';
 import '../shared/ui_helpers.dart';
 import '../widgets/app_text.dart';
@@ -9,23 +14,32 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              AppText.headingOne(
-                "Foodie",
-                color: primaryColor,
+    return ViewModelProvider<ApplicationViewModel>.withConsumer(
+      viewModelBuilder: () => locator<ApplicationViewModel>(),
+      onModelReady: (model) => model.handleSplashLogic(),
+      builder: (context, model, child) {
+        return Scaffold(
+          body: SafeArea(
+            child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AppText.headingOne(
+                    "Foodie",
+                    color: primaryColor,
+                  ),
+                  verticalSpace(20),
+                  const CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(primaryColor),
+                  )
+                ],
               ),
-              verticalSpace(10),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

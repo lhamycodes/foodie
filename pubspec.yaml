@@ -35,13 +35,15 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   # get it
-  get_it: ^6.0.0
+  get_it: ^7.2.0
   # provider
   provider: ^4.0.1
   # provider architecture
   provider_architecture: ^1.1.1+1
   # for formatting stuffs
   intl: ^0.17.0
+  # for google fonts
+  google_fonts: ^2.0.0
   # for feather icons
   feather_icons_flutter: ^4.7.4
   # for bot toast
@@ -75,39 +77,3 @@ flutter:
 
   assets:
     - assets/images/
-  
-  fonts:
-    - family: Gilroy
-      fonts:
-        - asset: assets/fonts/Gilroy-Black.ttf
-        - asset: assets/fonts/Gilroy-BlackItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-Bold.ttf
-        - asset: assets/fonts/Gilroy-BoldItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-ExtraBold.ttf
-        - asset: assets/fonts/Gilroy-ExtraBoldItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-Heavy.ttf
-        - asset: assets/fonts/Gilroy-HeavyItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-Light.ttf
-        - asset: assets/fonts/Gilroy-LightItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-Medium.ttf
-        - asset: assets/fonts/Gilroy-MediumItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Gilroy-RegularItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-SemiBold.ttf
-        - asset: assets/fonts/Gilroy-SemiBoldItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-Thin.ttf
-        - asset: assets/fonts/Gilroy-ThinItalic.ttf
-          style: italic
-        - asset: assets/fonts/Gilroy-UltraLight.ttf
-        - asset: assets/fonts/Gilroy-UltraLightItalic.ttf
-          style: italic
-    

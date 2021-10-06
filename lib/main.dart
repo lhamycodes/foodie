@@ -1,5 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'const.dart';
 import 'locator.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       navigatorKey: locator<MyNavigationService>().navigationKey,
       theme: ThemeData(
-        fontFamily: "Gilroy",
+        textTheme: GoogleFonts.notoSansTextTheme(),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primarySwatch: Colors.orange,
         primaryColor: primaryColor,
