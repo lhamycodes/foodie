@@ -47,7 +47,7 @@ class ApplicationViewModel extends BaseModel {
     ),
     PaymentMethod(
       name: "Visa",
-      image: "mastercard.png",
+      image: "visa.png",
       number: "798* **** *783",
     ),
     PaymentMethod(
@@ -56,6 +56,12 @@ class ApplicationViewModel extends BaseModel {
       number: "982* **** *012",
     )
   ];
+
+  String? selectedPaymentMethod;
+  void setSelectedPaymentMethod(m) {
+    selectedPaymentMethod = m;
+    notifyListeners();
+  }
 
   final Cart _cart = Cart(items: []);
   Cart get cart => _cart;
@@ -104,6 +110,10 @@ class ApplicationViewModel extends BaseModel {
       }
       notifyListeners();
     });
+  }
+
+  void goBack() {
+    _navService.pop();
   }
 
   void to(String route, {bool replace = false}) {

@@ -31,7 +31,11 @@ class _AppScaffoldState extends State<AppScaffold> {
         centerTitle: true,
         leading: GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTap: () => widget.onBackTap,
+          onTap: () {
+            if (widget.onBackTap != null) {
+              widget.onBackTap!();
+            }
+          },
           child: Container(
             margin: const EdgeInsets.only(left: 22, top: 5, bottom: 5),
             alignment: Alignment.center,

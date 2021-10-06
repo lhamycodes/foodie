@@ -31,7 +31,7 @@ const TextStyle bodyStyle = TextStyle(
 
 const TextStyle subheadingStyle = TextStyle(
   fontSize: 20,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.w800,
 );
 
 const TextStyle captionStyle = TextStyle(

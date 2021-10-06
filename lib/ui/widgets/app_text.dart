@@ -17,13 +17,11 @@ class AppText extends StatelessWidget {
         alignment = align,
         super(key: key);
 
-  AppText.headingTwo(
+  const AppText.headingTwo(
     this.text, {
     TextAlign align = TextAlign.start,
     Key? key,
-  })  : style = heading2Style.copyWith(
-          fontWeight: FontWeight.w500,
-        ),
+  })  : style = heading2Style,
         alignment = align,
         super(key: key);
 
