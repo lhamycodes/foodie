@@ -13,6 +13,13 @@ class Cart {
     return 0;
   }
 
+  get itemCount {
+    if (hasItems) {
+      return items!.map((item) => item.quantity).reduce((a, b) => a + b);
+    }
+    return 0;
+  }
+
   bool get hasItems {
     return items!.isNotEmpty;
   }

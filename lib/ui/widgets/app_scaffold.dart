@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodie/ui/shared/app_colors.dart';
 
 import 'app_text.dart';
+import 'border_widget.dart';
 
 class AppScaffold extends StatefulWidget {
   final String title;
@@ -36,17 +36,8 @@ class _AppScaffoldState extends State<AppScaffold> {
               widget.onBackTap!();
             }
           },
-          child: Container(
-            margin: const EdgeInsets.only(left: 22, top: 5, bottom: 5),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: primaryColor.withOpacity(0.2),
-                width: 2,
-              ),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(Icons.arrow_back),
+          child: const BorderWidget(
+            child: Icon(Icons.arrow_back),
           ),
         ),
         actions: widget.trailing != null

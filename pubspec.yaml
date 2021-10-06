@@ -52,6 +52,8 @@ dependencies:
   stacked_services: ^0.8.13
   # for timeline
   flutter_timeline: ^0.1.1+13
+  # for badges
+  badges: ^2.0.1
 
 dev_dependencies:
   flutter_test:

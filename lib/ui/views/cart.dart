@@ -2,10 +2,10 @@
 
 import 'dart:io';
 
+import 'package:badges/badges.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:foodie/ui/widgets/app_button.dart';
-import 'package:foodie/ui/widgets/input.dart';
+import 'package:foodie/ui/shared/app_colors.dart';
 import 'package:intl/intl.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 
@@ -14,9 +14,12 @@ import '../../models/cart_item.dart';
 import '../../viewmodels/application_view_model.dart';
 import '../shared/app_styles.dart';
 import '../shared/ui_helpers.dart';
-import '../widgets/cart_item_card.dart';
-import '../widgets/title_text.dart';
+import '../widgets/app_button.dart';
 import '../widgets/app_scaffold.dart';
+import '../widgets/border_widget.dart';
+import '../widgets/cart_item_card.dart';
+import '../widgets/input.dart';
+import '../widgets/title_text.dart';
 
 class CartScreen extends StatefulWidget {
   static const routeName = '/app/cart';
@@ -36,6 +39,23 @@ class _CartScreenState extends State<CartScreen> {
       builder: (context, model, child) {
         return AppScaffold(
           title: "Cart 🛒",
+          trailing: Padding(
+            padding: const EdgeInsets.only(top: 3),
+            child: Badge(
+              badgeColor: primaryColor,
+              badgeContent: Text(
+                "${model.cart.itemCount}",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              child: const BorderWidget(
+                padding: EdgeInsets.symmetric(horizontal: 9),
+                child: Icon(FeatherIcons.shoppingCart),
+              ),
+            ),
+          ),
           child: Container(
             padding: scaffoldPadding,
             child: Column(

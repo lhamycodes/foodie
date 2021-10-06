@@ -1,6 +1,8 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
+import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:foodie/ui/widgets/border_widget.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 
 import '../../locator.dart';
@@ -26,6 +28,10 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
       builder: (context, model, child) {
         return AppScaffold(
           title: "Track Order 📦",
+          trailing: const BorderWidget(
+            padding: EdgeInsets.symmetric(horizontal: 9),
+            child: Icon(FeatherIcons.bell),
+          ),
           onBackTap: () => model.goBack(),
           child: Container(
             padding: scaffoldPadding,
