@@ -86,7 +86,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 height: 60,
                                 width: 60,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFedeef0),
+                                  color: greyBg,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Image.asset(
