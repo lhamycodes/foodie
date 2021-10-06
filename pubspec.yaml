@@ -44,8 +44,10 @@ dependencies:
   intl: ^0.17.0
   # for feather icons
   feather_icons_flutter: ^4.7.4
+  # for bot toast
+  bot_toast: ^4.0.1
   # for stacked services
-  stacked_services: ^0.7.3
+  stacked_services: ^0.8.13
   # for timeline
   flutter_timeline: ^0.1.1+13
 
