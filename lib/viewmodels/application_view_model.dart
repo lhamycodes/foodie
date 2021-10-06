@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
 
 import 'base_model.dart';
 import '../locator.dart';
@@ -20,18 +21,21 @@ class ApplicationViewModel extends BaseModel {
       name: "Akara, Pap, Milk And Sugar",
       image: "akara.png",
       amount: 30.00,
+      color: Colors.orangeAccent,
     ),
     Food(
       id: 102,
       name: "Boiled Yam, Chicken Stew (Chicken Cooked In Stew)",
       image: "yam.png",
       amount: 10.00,
+      color: Colors.redAccent,
     ),
     Food(
       id: 103,
       name: "Plain Spaghetti, Croaker Fish Stew, Fried Plantain Side",
       image: "noodles.png",
       amount: 15.00,
+      color: Colors.greenAccent,
     ),
   ];
 

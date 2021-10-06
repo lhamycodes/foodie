@@ -1,15 +1,21 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
+import 'dart:io';
+
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:foodie/models/cart_item.dart';
-import 'package:foodie/ui/shared/ui_helpers.dart';
-import 'package:foodie/ui/widgets/cart_item_card.dart';
+import 'package:foodie/ui/widgets/app_button.dart';
+import 'package:foodie/ui/widgets/input.dart';
+import 'package:intl/intl.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 
 import '../../locator.dart';
+import '../../models/cart_item.dart';
 import '../../viewmodels/application_view_model.dart';
 import '../shared/app_styles.dart';
+import '../shared/ui_helpers.dart';
+import '../widgets/cart_item_card.dart';
+import '../widgets/title_text.dart';
 import '../widgets/app_scaffold.dart';
 
 class CartScreen extends StatefulWidget {
@@ -73,7 +79,58 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                 ),
-                const Text("hello"),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: Platform.isAndroid ? 20 : 40,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Input(
+                          hintText: "Promo Code",
+                          filled: true,
+                          fillColor: Colors.white,
+                          suffixIcon: Padding(
+                            padding: const EdgeInsets.all(6),
+                            child: AppButton(
+                              title: "Apply",
+                              onPressed: () {},
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 30,
+                                vertical: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      verticalSpace(20),
+                      TitleText(
+                        title: "Item Total",
+                        text: NumberFormat.currency(
+                          symbol: '\$',
+                          decimalDigits: 2,
+                        ).format(model.cart.sum),
+                      ),
+                      const Divider(height: 30),
+                      TitleText(
+                        title: "Total",
+                        text: NumberFormat.currency(
+                          symbol: '\$',
+                          decimalDigits: 2,
+                        ).format(model.cart.sum),
+                      ),
+                      verticalSpace(20),
+                      SizedBox(
+                        width: double.infinity,
+                        child: AppButton(
+                          title: "Payment",
+                          onPressed: () => model.to("payment"),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

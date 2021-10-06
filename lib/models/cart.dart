@@ -14,7 +14,7 @@ class Cart {
   }
 
   bool get hasItems {
-    return items!.isNotEmpty && items!.length > 5;
+    return items!.isNotEmpty;
   }
 
   bool add(CartItem item) {

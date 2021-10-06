@@ -44,10 +44,16 @@ class _CartItemCardState extends State<CartItemCard> {
       ),
       child: Row(
         children: [
-          Image.asset(
-            "assets/images/${widget.food.image}",
-            height: 100,
-            width: 100,
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: widget.food.color.withOpacity(0.2),
+            ),
+            child: Image.asset(
+              "assets/images/${widget.food.image}",
+              height: 100,
+              width: 100,
+            ),
           ),
           horizontalSpace(10),
           Expanded(

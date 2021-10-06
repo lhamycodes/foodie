@@ -50,7 +50,7 @@ class Input extends StatelessWidget {
     this.enabled = true,
     this.readOnly = false,
     this.filled = false,
-    this.fullBorder = false,
+    this.fullBorder = true,
     this.maxLines,
     this.minLines = 1,
     this.keyboardAction = TextInputAction.next,
@@ -83,7 +83,7 @@ class Input extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: !fullBorder
             ? null
-            : const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            : const EdgeInsets.symmetric(horizontal: 20, vertical: 17),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelText: showLabel ? label : null,

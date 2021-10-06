@@ -55,7 +55,7 @@ class _AppScaffoldState extends State<AppScaffold> {
             : null,
         automaticallyImplyLeading: false,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        title: AppText.headingTwo(widget.title),
+        title: AppText.headingThree(widget.title),
       ),
       body: widget.child,
     );
