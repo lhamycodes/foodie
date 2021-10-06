@@ -1,8 +1,9 @@
-import 'package:foodie/models/cart_item.dart';
+import 'package:collection/collection.dart';
 
 import 'base_model.dart';
 import '../locator.dart';
 import '../models/cart.dart';
+import '../models/cart_item.dart';
 import '../models/food.dart';
 import '../models/payment_method.dart';
 import '../services/navigation_service.dart';
@@ -15,19 +16,19 @@ class ApplicationViewModel extends BaseModel {
 
   List<Food> foods = [
     Food(
-      id: "aka",
+      id: 101,
       name: "Akara, Pap, Milk And Sugar",
       image: "akara.png",
       amount: 30.00,
     ),
     Food(
-      id: "yam",
+      id: 102,
       name: "Boiled Yam, Chicken Stew (Chicken Cooked In Stew)",
       image: "yam.png",
       amount: 10.00,
     ),
     Food(
-      id: "nod",
+      id: 103,
       name: "Plain Spaghetti, Croaker Fish Stew, Fried Plantain Side",
       image: "noodles.png",
       amount: 15.00,
@@ -54,6 +55,37 @@ class ApplicationViewModel extends BaseModel {
 
   final Cart _cart = Cart(items: []);
   Cart get cart => _cart;
+
+  removeItemFromCart({required CartItem item}) {
+    CartItem? it = cart.items!.firstWhereOrNull(
+      (el) => el.food.id == item.food.id,
+    );
+
+    if (it != null) {
+      cart.items!.remove(it);
+      notifyListeners();
+    }
+  }
+
+  increaseItemInCart({required CartItem item}) {
+    cart.add(item);
+    notifyListeners();
+  }
+
+  decreaseItemInCart({required CartItem item}) {
+    CartItem? it = cart.items!.firstWhereOrNull(
+      (el) => el.food.id == item.food.id,
+    );
+
+    if (it != null) {
+      if (it.quantity > 1) {
+        --it.quantity;
+      } else {
+        cart.items!.remove(it);
+      }
+      notifyListeners();
+    }
+  }
 
   Future handleSplashLogic() async {
     Future.delayed(const Duration(seconds: 2), () async {

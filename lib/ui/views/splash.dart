@@ -17,6 +17,7 @@ class SplashScreen extends StatelessWidget {
     return ViewModelProvider<ApplicationViewModel>.withConsumer(
       viewModelBuilder: () => locator<ApplicationViewModel>(),
       onModelReady: (model) => model.handleSplashLogic(),
+      disposeViewModel: false,
       builder: (context, model, child) {
         return Scaffold(
           body: SafeArea(
