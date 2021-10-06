@@ -129,7 +129,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
     List<Map<String, dynamic>> _evs = [
       {
         "title": "Delivery Address",
-        "body": "Faculty of Sciences, University of Lagos",
+        "body": "Faculty of Science, University of Lagos",
         "icon": Icons.pin_drop_sharp,
       },
       {

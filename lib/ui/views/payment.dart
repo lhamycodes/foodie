@@ -149,7 +149,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             ),
                           ),
                           subtitle: Text(
-                            "Faculty of Sciences, University of Lagos, Akoka, Yaba, Lagos.",
+                            "Faculty of Science, University of Lagos, Akoka, Yaba, Lagos.",
                           ),
                           isThreeLine: true,
                           trailing: Icon(FeatherIcons.edit3),
