@@ -5,10 +5,18 @@ import 'const.dart';
 import 'locator.dart';
 import 'routes.dart';
 import 'services/navigation_service.dart';
+import 'ui/shared/app_colors.dart';
 import 'ui/views/splash.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await setupLocator();
+    runApp(const MyApp());
+  } catch (error) {
+    debugPrint(error.toString());
+    debugPrint('Locator setup has failed');
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +30,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       navigatorKey: locator<MyNavigationService>().navigationKey,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: "Gilroy",
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.orange,
+        primaryColor: primaryColor,
+        scaffoldBackgroundColor: scaffoldBgColor,
+        hintColor: primaryColor,
+        indicatorColor: primaryColor,
+        appBarTheme: const AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
       ),
       routes: appRoutes,
       onUnknownRoute: (settings) {

@@ -98,6 +98,7 @@ flutter:
         - asset: assets/fonts/Gilroy-MediumItalic.ttf
           style: italic
         - asset: assets/fonts/Gilroy-Regular.ttf
+          weight: 400
         - asset: assets/fonts/Gilroy-RegularItalic.ttf
           style: italic
         - asset: assets/fonts/Gilroy-SemiBold.ttf
