@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider_architecture/provider_architecture.dart';
@@ -124,6 +125,36 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                       verticalSpace(30),
                       const AppText.subheading("Address"),
+                      verticalSpace(15),
+                      Card(
+                        elevation: 5,
+                        margin: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const ListTile(
+                          leading: CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Color(0xFFedeef0),
+                            child: Icon(
+                              FeatherIcons.mapPin,
+                              color: Colors.black,
+                            ),
+                          ),
+                          title: Text(
+                            "Home",
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          subtitle: Text(
+                            "Faculty of Sciences, University of Lagos, Akoka, Yaba, Lagos.",
+                          ),
+                          isThreeLine: true,
+                          trailing: Icon(FeatherIcons.edit3),
+                        ),
+                      ),
                     ],
                   ),
                 ),
