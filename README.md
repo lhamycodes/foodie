@@ -1,8 +1,8 @@
-# foodie
+# Foodie
 
 A new Flutter project.
 
-## Original Design
+## Original Design - [Inspiration](https://twitter.com/evanelubah3/status/1445395567920754695?s=21)
 <p>
   <img src="https://user-images.githubusercontent.com/42491895/136212039-9911ca3a-c4da-424a-af78-54db197f1bea.jpeg" heigh="300px"/>
 </p>
@@ -15,6 +15,10 @@ A new Flutter project.
     <img src="screenshots/3.png" width="200px" height="auto" hspace="10"/>
     <img src="screenshots/4.png" width="200px" height="auto" hspace="10"/>
 </p>
+
+## Credits
+- Images and meal names were gotten from [OurEdenLife](https://ouredenlife.com/food)
+- Design inspiration by [Evan Elubah](https://twitter.com/evanelubah3/status/1445395567920754695?s=21)
 
 ## Getting Started
 
