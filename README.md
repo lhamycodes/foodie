@@ -2,6 +2,20 @@
 
 A new Flutter project.
 
+## Original Design
+<p>
+  <img src="https://user-images.githubusercontent.com/42491895/136212039-9911ca3a-c4da-424a-af78-54db197f1bea.jpeg" heigh="300px"/>
+</p>
+
+## My Implementation
+
+<p>
+    <img src="screenshots/1.png" width="200px" height="auto" hspace="10"/>
+    <img src="screenshots/2.png" width="200px" height="auto" hspace="10"/>
+    <img src="screenshots/3.png" width="200px" height="auto" hspace="10"/>
+    <img src="screenshots/4.png" width="200px" height="auto" hspace="10"/>
+</p>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
